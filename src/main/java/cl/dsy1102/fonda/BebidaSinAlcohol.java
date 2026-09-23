@@ -24,7 +24,9 @@ public class BebidaSinAlcohol extends Bebida{
     }
     @Override
     public String  obtenerDetalle() {
-        String info = super.obtenerDetalle();
+        String info = "";
+        info += "Tipo: Bebida Sin Alcohol" + "\n";
+        info += super.obtenerDetalle();
         info += "Azucar por Litro: " + azucarPorLitro + "\n";
         return info;
     }

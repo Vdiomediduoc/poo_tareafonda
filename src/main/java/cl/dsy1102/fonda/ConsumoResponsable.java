@@ -5,7 +5,9 @@ public interface ConsumoResponsable {
         return true;
     }
     public void restringirVenta();
-    public boolean superaLimite(int unidades);
+    public static boolean superaLimite(int unidades){
+        return unidades >= 3;
+    }
 
 }
 

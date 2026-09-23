@@ -24,7 +24,10 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable{
     public double getGradosAlcohol() {
         return gradosAlcohol;
     }
-    public void setGradosAlcohol(double gradosAlcohol) {
+    public void setGradosAlcohol(double gradosAlcohol) throws Exception{
+        if(gradosAlcohol< 0.5 || gradosAlcohol > 45){
+            throw new IllegalArgumentException("El rango debe encontrarse entre 0.5 y 45 grados");
+        }
         this.gradosAlcohol = gradosAlcohol;
     }
     public boolean isCertificada() {
@@ -58,7 +61,9 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable{
     }
     @Override
     public String obtenerDetalle(){
-        String info = super.obtenerDetalle();
+        String info = "";
+        info += "Tipo: Bebida Alcoholica" + "\n";
+        info += super.obtenerDetalle();
         info += "Limite por Cliente: " + limitecliente + "\n";
         info += "Grados de Alcohol: " + gradosAlcohol + "\n";
         info += "Tiene certificacion: " + certificada + "\n";
