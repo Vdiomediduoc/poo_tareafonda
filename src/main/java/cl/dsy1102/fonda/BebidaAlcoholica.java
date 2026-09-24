@@ -15,10 +15,10 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable{
         this.certificada = certificada;
         this.ventaRestringida = ventaRestringida;
     }
-    public int getLimitecliente() {
+    public int getLimiteCliente() {
         return limitecliente;
     }
-    public void setLimitecliente(int limitecliente) {
+    public void setLimiteCliente(int limitecliente) {
         this.limitecliente = limitecliente;
     }
     public double getGradosAlcohol() {
@@ -42,12 +42,13 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable{
     public void setVentaRestringida(boolean ventaRestringida) {
         this.ventaRestringida = ventaRestringida;
     }
+    @Override
     public boolean tieneVentaRestringida(){
         return ventaRestringida;
     }
     @Override
     public void restringirVenta(){
-        ventaRestringida = false;
+        ventaRestringida = true;
     }
     @Override
     public double calcularPrecio(){
@@ -70,6 +71,7 @@ public class BebidaAlcoholica extends Bebida implements ConsumoResponsable{
         info += "Tiene la venta Restringida: " + ventaRestringida + "\n";
         return info;
     }
+    @Override
     public boolean superaLimite(int unidades){
         return unidades > limitecliente;
     }

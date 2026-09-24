@@ -1,13 +1,9 @@
 package cl.dsy1102.fonda;
 
 public interface ConsumoResponsable {
-    public default boolean tieneVentaRestringida(){
-        return true;
-    }
+    public boolean tieneVentaRestringida();
     public void restringirVenta();
-    public static boolean superaLimite(int unidades){
-        return unidades >= 3;
-    }
+    public boolean superaLimite(int unidades);
 
 }
 
